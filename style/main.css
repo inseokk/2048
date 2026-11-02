@@ -756,3 +756,121 @@ hr {
     margin-top: 90px !important; }
   .game-message .lower {
     margin-top: 30px !important; } }
+
+.theme-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 24px;
+  background: #eee4da;
+  color: #776E65;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); }
+  .theme-toggle input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%); }
+  .theme-toggle input:focus-visible + .theme-toggle-switch {
+    outline: 2px solid currentColor;
+    outline-offset: 3px; }
+
+.theme-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  flex: 0 0 36px;
+  border-radius: 10px;
+  background: #bbada0;
+  transition: background 100ms ease-in-out; }
+  .theme-toggle-switch:after {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    content: "";
+    transition: transform 100ms ease-in-out; }
+
+.theme-toggle input:checked + .theme-toggle-switch {
+  background: #8f7a66; }
+  .theme-toggle input:checked + .theme-toggle-switch:after {
+    -webkit-transform: translateX(16px);
+    -moz-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px); }
+
+html.dark, body.dark {
+  background: #17191c; }
+
+body.dark {
+  color: #c4c0b9; }
+  body.dark a {
+    color: #d6d1c6; }
+  body.dark hr {
+    border-bottom-color: #3a3d40; }
+  body.dark .score-container, body.dark .best-container, body.dark .game-container {
+    background: #292d32; }
+  body.dark .score-container:after, body.dark .best-container:after {
+    color: #b6aea2; }
+  body.dark .score-container .score-addition {
+    color: #d6d1c6; }
+  body.dark .game-message {
+    background: rgba(23, 25, 28, 0.78); }
+    body.dark .game-message.game-won {
+      background: rgba(164, 134, 46, 0.72); }
+  body.dark .game-message a, body.dark .restart-button {
+    background: #454c54;
+    color: #e5e1d8; }
+  body.dark .grid-cell {
+    background: rgba(174, 181, 189, 0.1); }
+  body.dark .tile .tile-inner {
+    color: #e5e1d8;
+    box-shadow: none; }
+  body.dark .tile.tile-2 .tile-inner {
+    background: #3b4148; }
+  body.dark .tile.tile-4 .tile-inner {
+    background: #555d66; }
+  body.dark .tile.tile-8 .tile-inner {
+    background: #8d6048; }
+  body.dark .tile.tile-16 .tile-inner {
+    background: #a05c40; }
+  body.dark .tile.tile-32 .tile-inner {
+    background: #a3443c; }
+  body.dark .tile.tile-64 .tile-inner {
+    background: #a13832; }
+  body.dark .tile.tile-128 .tile-inner {
+    background: #8c7440; }
+  body.dark .tile.tile-256 .tile-inner {
+    background: #9a7d34; }
+  body.dark .tile.tile-512 .tile-inner {
+    background: #a4862e; }
+  body.dark .tile.tile-1024 .tile-inner {
+    background: #af8d24; }
+  body.dark .tile.tile-2048 .tile-inner {
+    background: #b99519; }
+  body.dark .tile.tile-super .tile-inner {
+    background: #625a43; }
+  body.dark .theme-toggle {
+    background: #292d32;
+    color: #e5e1d8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); }
+  body.dark .theme-toggle-switch {
+    background: #555b63; }
+    body.dark .theme-toggle-switch:after {
+      background: #e5e1d8; }
+  body.dark .theme-toggle input:checked + .theme-toggle-switch {
+    background: #9b8240; }
