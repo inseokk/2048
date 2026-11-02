@@ -21,6 +21,7 @@ window.fakeStorage = {
 function LocalStorageManager() {
   this.bestScoreKey     = "bestScore";
   this.gameStateKey     = "gameState";
+  this.themeKey         = "theme";
 
   var supported = this.localStorageSupported();
   this.storage = supported ? window.localStorage : window.fakeStorage;
@@ -60,4 +61,12 @@ LocalStorageManager.prototype.setGameState = function (gameState) {
 
 LocalStorageManager.prototype.clearGameState = function () {
   this.storage.removeItem(this.gameStateKey);
+};
+
+LocalStorageManager.prototype.getTheme = function () {
+  return this.storage.getItem(this.themeKey) || "light";
+};
+
+LocalStorageManager.prototype.setTheme = function (theme) {
+  this.storage.setItem(this.themeKey, theme);
 };
